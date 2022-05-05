@@ -7,6 +7,8 @@ public class CardRequest {
     private Boolean cardFoil;
     private Double cardAmount;
 
+
+
     public CardRequest() {
     }
 
@@ -16,7 +18,10 @@ public class CardRequest {
         this.cardLanguage = cardLanguage;
         this.cardFoil = cardFoil;
         this.cardAmount = cardAmount;
+
     }
+
+
 
     public String getCardName() {
         return cardName;
@@ -57,6 +62,8 @@ public class CardRequest {
     public void setCardAmount(Double cardAmount) {
         this.cardAmount = cardAmount;
     }
+
+
 
     @Override
     public String toString() {

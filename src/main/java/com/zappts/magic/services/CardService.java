@@ -41,6 +41,7 @@ public class CardService {
         upCard.setCardAmount(card.getCardAmount());
         upCard.setCardFoil(card.getCardFoil());
 
+
         return cardRepository.save(upCard);
     }
 

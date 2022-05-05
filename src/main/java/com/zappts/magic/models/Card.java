@@ -1,9 +1,6 @@
 package com.zappts.magic.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Card {
@@ -16,6 +13,8 @@ public class Card {
     private Boolean cardFoil;
     private Double cardAmount;
 
+
+
     public Card() {
     }
 
@@ -26,6 +25,7 @@ public class Card {
         this.cardLanguage = cardLanguage;
         this.cardFoil = cardFoil;
         this.cardAmount = cardAmount;
+
     }
 
     public Integer getCardId() {
@@ -75,6 +75,10 @@ public class Card {
     public void setCardAmount(Double cardAmount) {
         this.cardAmount = cardAmount;
     }
+
+
+
+
 
     @Override
     public String toString() {
