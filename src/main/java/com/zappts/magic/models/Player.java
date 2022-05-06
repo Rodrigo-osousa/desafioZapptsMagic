@@ -11,8 +11,7 @@ import javax.persistence.Id;
 public class Player {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer playerId;
     private String playerNickName;
     private String playerEmail;

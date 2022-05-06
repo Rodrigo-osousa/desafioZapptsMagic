@@ -8,8 +8,7 @@ import java.util.List;
 @Entity
 public class CardDeck {
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cardDeckId;
     private String cardDeckName;
     private Integer totalCardsFoils;
