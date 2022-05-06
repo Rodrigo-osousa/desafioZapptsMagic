@@ -1,10 +1,23 @@
 package com.zappts.magic.requests;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class CardRequest {
+    @NotNull(message = "Nome da Carta não pose ser nullo!")
+    @NotBlank(message = "Nome da Carta ficar em branco!")
     private String cardName;
+    @NotNull(message = "Edição da Carta não pose ser nullo!")
+    @NotBlank(message = "Edição da Carta ficar em branco!")
     private String cardEdition;
+    @NotNull(message = "Linguagem da Carta não pose ser nullo!")
+    @NotBlank(message = "Linguagem da Carta ficar em branco!")
     private String cardLanguage;
+    @NotNull(message = "Carta laminada não pose ser nullo, favor inserir true ou false!")
+    @NotBlank(message = "Carta laminada  não pode ficar em branco!")
     private Boolean cardFoil;
+    @NotNull(message = "Valor da Carta não pose ser nullo!")
+    @NotBlank(message = "Valor da Carta ficar em branco!")
     private Double cardAmount;
 
 

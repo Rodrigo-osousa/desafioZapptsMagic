@@ -1,7 +1,14 @@
 package com.zappts.magic.requests;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class CardDeckRequest {
+    @NotNull(message = "Nome do deck não pose ser nullo!")
+    @NotBlank(message = "Nome do deck não pode ficar em branco!")
     private String cardDeckName;
+    @NotNull(message = "Nome do jogador não pose ser nullo!")
+    @NotBlank(message = "Nome do jogador não pode ficar em branco!")
     private String playerName;
 
 
