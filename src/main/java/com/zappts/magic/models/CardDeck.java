@@ -15,7 +15,7 @@ public class CardDeck {
     @ManyToOne
     private Player player;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Card> cards;
 
     public CardDeck() {

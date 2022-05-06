@@ -100,10 +100,7 @@ public class CardDeckService {
              int notFoilsSum = findDeck.get().getTotalCardsNotFoils() - 1;
              findDeck.get().setTotalCardsNotFoils(notFoilsSum);
          }
-
         cards.remove(cardMovimentRequest.getCardId()-1);
-
-
         findDeck.get().setCard(cards);
         return cardDeckRepository.save(findDeck.get());
 
@@ -115,6 +112,15 @@ public class CardDeckService {
             throw new GameException("Deck não localizado!");
         }
         List<Card> cards = new ArrayList<>(findListOfCards.get().getCards());
+        if(cards.size() > 0) {
+            Collections.sort(cards, new Comparator<Card>() {
+                @Override
+                public int compare(Card o1, Card o2) {
+                    return o1.getCardName().compareTo(o2.getCardName());
+                }
+            });
+        }
+
         return cards;
     }
 
