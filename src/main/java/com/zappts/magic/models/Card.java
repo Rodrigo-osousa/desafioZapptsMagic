@@ -1,19 +1,20 @@
 package com.zappts.magic.models;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
 public class Card {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
     private Integer CardId;
     private String cardName;
     private String cardEdition;
     private String cardLanguage;
     private Boolean cardFoil;
     private Double cardAmount;
-
-
 
     public Card() {
     }
