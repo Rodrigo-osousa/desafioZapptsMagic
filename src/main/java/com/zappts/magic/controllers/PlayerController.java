@@ -6,6 +6,7 @@ import com.zappts.magic.requests.PlayerRequest;
 import com.zappts.magic.services.PlayerService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
@@ -20,12 +21,12 @@ public class PlayerController {
     }
 
     @PostMapping("/new")
-    public Player createPlayer(@RequestBody PlayerRequest playerRequest) throws GameException {
+    public Player createPlayer(@Valid @RequestBody PlayerRequest playerRequest) throws GameException {
         return playerService.createPlayer(playerRequest);
     }
 
     @PutMapping("/update")
-    public Player updatePlayer(@RequestBody Player player) throws GameException {
+    public Player updatePlayer(@Valid @RequestBody Player player) throws GameException {
         return playerService.updatePlayer(player);
     }
 

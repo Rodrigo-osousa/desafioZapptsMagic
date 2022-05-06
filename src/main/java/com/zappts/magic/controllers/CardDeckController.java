@@ -8,6 +8,7 @@ import com.zappts.magic.requests.CardMovimentRequest;
 import com.zappts.magic.services.CardDeckService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -22,7 +23,7 @@ public class CardDeckController {
     }
 
     @PostMapping("/new")
-    public CardDeck newDeck(@RequestBody CardDeckRequest cardDeckRequest) throws GameException {
+    public CardDeck newDeck(@Valid  @RequestBody CardDeckRequest cardDeckRequest) throws GameException {
         return cardDeckService.newDeck(cardDeckRequest);
     }
 
@@ -32,12 +33,12 @@ public class CardDeckController {
     }
 
     @PostMapping("/cardAdd")
-    public CardDeck cardAdd(@RequestBody CardMovimentRequest cardMovimentRequest) throws GameException {
+    public CardDeck cardAdd(@Valid @RequestBody CardMovimentRequest cardMovimentRequest) throws GameException {
         return cardDeckService.addCard(cardMovimentRequest);
     }
 
     @PostMapping("/cardRemove")
-    public CardDeck cardRemove(@RequestBody CardMovimentRequest cardMovimentRequest) throws GameException {
+    public CardDeck cardRemove(@Valid @RequestBody CardMovimentRequest cardMovimentRequest) throws GameException {
         return cardDeckService.removeCard(cardMovimentRequest);
     }
 
