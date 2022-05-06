@@ -6,6 +6,7 @@ import com.zappts.magic.requests.CardRequest;
 import com.zappts.magic.services.CardService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -19,12 +20,12 @@ public class CardController {
     }
 
     @PostMapping("/new")
-    public Card newCard(@RequestBody CardRequest cardRequest){
+    public Card newCard(@Valid @RequestBody CardRequest cardRequest){
         return cardService.createCard(cardRequest);
     }
 
     @PutMapping("/update")
-    public Card updateCard(@RequestBody Card card) throws GameException {
+    public Card updateCard(@Valid @RequestBody Card card) throws GameException {
         return cardService.updateCard(card);
     }
 
